@@ -3,7 +3,11 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ["react-app", "next/core-web-vitals"],
+  extends: [
+    "react-app",
+    "next/core-web-vitals",
+    "plugin:storybook/recommended",
+  ],
   overrides: [
     {
       files: ["**/*.stories.*"],
