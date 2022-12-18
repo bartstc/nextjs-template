@@ -1,4 +1,4 @@
-# What is SPA Template
+# What is NextJS Template
 
 This project provides the basic dev configuration designated for developing the NextJS app. It contains crucial tooling and settings allowing for a quick start with suitable developer experience (DX).
 
