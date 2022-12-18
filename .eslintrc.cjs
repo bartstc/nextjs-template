@@ -49,7 +49,6 @@ module.exports = {
           "modules/*/*/*",
           "*/**/modules/*/*",
           "dayjs",
-          "react-router-dom",
         ],
       },
     ],
