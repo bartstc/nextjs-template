@@ -5,7 +5,7 @@ import { userEvent, within } from "@storybook/testing-library";
 import { Counter } from "./Counter";
 
 const meta: Meta<typeof Counter> = {
-  title: "Demo/Counter",
+  title: "Modules/Demo/Counter",
   component: Counter,
   tags: ["docsPage"],
   parameters: {

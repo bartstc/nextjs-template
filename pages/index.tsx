@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { Inter } from "@next/font/google";
 
-import { Counter } from "../modules/demo/Counter";
+import { Counter } from "modules/demo/Counter";
 
 import styles from "../styles/Home.module.css";
 
