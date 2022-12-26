@@ -5,16 +5,16 @@ This project provides the basic dev configuration designated for developing the 
 # Main features
 
 - Next.js.
+- TypeScript support.
 - Testing environment based on [Vitest](https://vitest.dev/) and [Storybook](https://storybook.js.org/)
 - Static code analysis: eslint, prettier, husky.
-- TypeScript support.
 
 # How to use
 
 Clone this repo.
 
 ```
-git clone -b main --depth 1 --single-branch https://github.com/bartstc/nextjs-template.git [project_name]
+git clone -b basic --depth 1 --single-branch https://github.com/bartstc/nextjs-template.git [project_name]
 ```
 
 Link cloned repo with your own remote repository.
