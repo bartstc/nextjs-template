@@ -18,7 +18,7 @@ The template provides flexibility and the ability to customize depending on your
 - Everything that included in the `basic` version.
 - Internalization based on [React Intl](https://formatjs.io/docs/getting-started/installation/).
 - Data fetching and external state synchronization based on [React Query](https://tanstack.com/query/v4/).
-- Access to simple, modular and accessible component based on [Chakra UI](https://chakra-ui.com/) (todo).
+- Access to simple, modular and accessible component based on [Chakra UI](https://chakra-ui.com/).
 - Demo app (todo).
 
 # Guideline
@@ -55,18 +55,19 @@ Set your newly created and pushed branch as default. You may do this in `Setting
 
 ## Basic commands
 
-| Komenda                | Opis                                                                                                                                  |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| `yarn dev`             | Runs dev server with the [Fast Refresh](https://nextjs.org/docs/basic-features/fast-refresh) locally on port `3000`             |
-| `yarn build`           | Builds optimized app package                                                                                                    |
-| `yarn start`         | Runs the production-ready app                                                                                                           |
-| `yarn test`            | Runs unit tests                                                                                                     |
-| `yarn storybook`       | Runs a Storybook locally on port `6006`                                                                                     |
+| Komenda                | Opis                                                                                                                                                       |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `yarn dev`             | Runs dev server with the [Fast Refresh](https://nextjs.org/docs/basic-features/fast-refresh) locally on port `3000`                                        |
+| `yarn build`           | Builds optimized app package                                                                                                                               |
+| `yarn start`           | Runs the production-ready app                                                                                                                              |
+| `yarn test`            | Runs unit tests                                                                                                                                            |
+| `yarn storybook`       | Runs a Storybook locally on port `6006`                                                                                                                    |
 | `yarn test-storybook`  | Runs integration tests (requires a running Storybook on port `6006` - more info [here](https://storybook.js.org/blog/interaction-testing-with-storybook/)) |
-| `yarn build-storybook` | Builds static app with [a Storybook's content](https://storybook.js.org/docs/react/sharing/publish-storybook)             |
+| `yarn build-storybook` | Builds static app with [a Storybook's content](https://storybook.js.org/docs/react/sharing/publish-storybook)                                              |
 
 # Contributing
 
 It is publicly open for any contribution. Bugfixes, new features, and extra modules are welcome.
-  - To contribute to code: Fork the repo, push your changes to your fork, and submit a pull request.
-  - To report a bug: If something does not work, please report it using [GitHub Issues](https://github.com/bartstc/nextjs-template/issues).
+
+- To contribute to code: Fork the repo, push your changes to your fork, and submit a pull request.
+- To report a bug: If something does not work, please report it using [GitHub Issues](https://github.com/bartstc/nextjs-template/issues).
