@@ -3,6 +3,7 @@ import { IntlProvider } from "react-intl";
 
 import type { AppProps } from "next/app";
 
+import { ChakraProvider } from "@chakra-ui/react";
 import {
   Hydrate,
   QueryClient,
@@ -14,11 +15,13 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <IntlProvider locale="en">
-      <QueryClientProvider client={queryClient}>
-        <Hydrate state={pageProps.dehydratedState}>
-          <Component {...pageProps} />
-        </Hydrate>
-      </QueryClientProvider>
+      <ChakraProvider>
+        <QueryClientProvider client={queryClient}>
+          <Hydrate state={pageProps.dehydratedState}>
+            <Component {...pageProps} />
+          </Hydrate>
+        </QueryClientProvider>
+      </ChakraProvider>
     </IntlProvider>
   );
 }

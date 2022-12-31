@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { Button } from "@chakra-ui/react";
+
 import { usePostsQuery } from "../infrastructure";
 
 export const PostList = () => {
@@ -21,12 +23,12 @@ export const PostList = () => {
         ))}
       </ul>
       {postCount <= 90 && (
-        <button
+        <Button
           onClick={() => setPostCount(postCount + 10)}
-          disabled={isFetching}
+          isDisabled={isFetching}
         >
           {isFetching ? "Loading..." : "Show More"}
-        </button>
+        </Button>
       )}
       <style jsx>{`
         section {
@@ -59,17 +61,6 @@ export const PostList = () => {
         ul {
           margin: 0;
           padding: 0;
-        }
-
-        button:before {
-          align-self: center;
-          border-style: solid;
-          border-width: 6px 4px 0 4px;
-          border-color: #ffffff transparent transparent transparent;
-          content: "";
-          height: 0;
-          margin-right: 5px;
-          width: 0;
         }
       `}</style>
     </section>
