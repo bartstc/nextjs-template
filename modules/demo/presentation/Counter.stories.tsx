@@ -28,7 +28,7 @@ export const StartWithOne: Story = {
 export const Interactive: Story = {};
 Interactive.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
-  const incrementButton = canvas.getByRole("button");
+  const incrementButton = canvas.getByText(/count is/);
 
   await userEvent.click(incrementButton);
 
