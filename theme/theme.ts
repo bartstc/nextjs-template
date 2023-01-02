@@ -4,4 +4,10 @@ const config = {
   useSystemColorMode: true,
 };
 
-export const theme = extendTheme({ config });
+export const theme = extendTheme({
+  config,
+  fonts: {
+    heading: `'Inter', sans-serif`,
+    body: `'Inter', sans-serif`,
+  },
+});
