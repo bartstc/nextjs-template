@@ -1,17 +1,37 @@
+import Head from "next/head";
+
+import { VStack, Box } from "@chakra-ui/react";
 import { dehydrate, QueryClient } from "@tanstack/react-query";
 
-import { Layout, Header, Heading } from "shared/Layout";
-
+import {
+  FeatureSection,
+  HeroSection,
+  PricingSection,
+} from "modules/marketing/presentation";
 import { getPostsQuery } from "modules/posts/infrastructure";
-import { PostList } from "modules/posts/presentation";
+
+import { ToggleModeButton } from "../shared/Layout";
 
 const Home = () => {
   return (
-    <Layout>
-      <Header />
-      <Heading>ℹ️ This page shows how to use SSG with React-Query.</Heading>
-      <PostList />
-    </Layout>
+    <>
+      <Head>
+        <title>E-commerce Demo App</title>
+        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
+      <ToggleModeButton />
+      <Box px={{ base: 3, md: 4 }} maxW="1400px" m="0 auto">
+        <VStack display="stretch" spacing={{ base: 8, lg: 20 }}>
+          <HeroSection />
+          <FeatureSection />
+          <PricingSection />
+        </VStack>
+      </Box>
+    </>
   );
 };
 
