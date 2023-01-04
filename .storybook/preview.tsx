@@ -20,7 +20,7 @@ export const decorators = [
   (story: any) => (
     <ChakraProvider>
       <Box position="absolute" top="12px" right="12px">
-        <ToggleModeButton />
+        <ToggleModeButton size="xs" />
       </Box>
       {story()}
     </ChakraProvider>
