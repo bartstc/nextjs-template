@@ -1,4 +1,4 @@
 export interface IQueryParams {
-  limit?: number;
+  limit: number;
   sort?: string;
 }
