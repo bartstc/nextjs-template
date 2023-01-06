@@ -10,9 +10,16 @@ import {
   HeroSection,
   PricingSection,
 } from "modules/marketing/presentation";
-import { getPostsQuery } from "modules/posts/infrastructure";
+import {
+  getProductsQuery,
+  getProductsQueryKey,
+  useProductsQuery,
+} from "modules/products/infrastructure";
 
 const Home = () => {
+  // todo: handle error
+  const { data } = useProductsQuery();
+
   return (
     <>
       <Head>
@@ -25,7 +32,7 @@ const Home = () => {
       </Head>
       <Layout>
         <VStack display="stretch" spacing={{ base: 8, lg: 20 }}>
-          <HeroSection />
+          <HeroSection productNumber={data?.length ?? 0} />
           <FeatureSection />
           <PricingSection />
         </VStack>
@@ -38,8 +45,8 @@ export async function getStaticProps() {
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
-    queryKey: ["posts", 10],
-    queryFn: () => getPostsQuery(10),
+    queryKey: getProductsQueryKey(),
+    queryFn: () => getProductsQuery(),
   });
 
   return {

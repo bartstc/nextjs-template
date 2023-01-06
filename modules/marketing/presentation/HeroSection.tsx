@@ -12,7 +12,11 @@ import {
 } from "@chakra-ui/react";
 import { useBrandColor, useSecondaryTextColor } from "theme";
 
-const HeroSection = () => {
+interface IProps {
+  productNumber: number;
+}
+
+const HeroSection = ({ productNumber }: IProps) => {
   const brandColor = useBrandColor();
   const textColor = useSecondaryTextColor();
 
@@ -35,9 +39,9 @@ const HeroSection = () => {
           </Text>
         </Heading>
         <Text fontSize={{ base: "md", md: "lg", lg: "xl" }} color={textColor}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-          doloremque maiores nobis obcaecati quas quia saepe sapiente, vitae.
-          Ducimus eligendi fugiat veritatis!
+          We are a brand new e-commerce service with a lot of potential to
+          growth. At this point, we have about {productNumber} products in our
+          store and plenty of trusted clients that will soon extend their offer.
         </Text>
         <VStack
           spacing={3}
