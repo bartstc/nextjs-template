@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Navbar } from "./index";
+import { Footer } from "./index";
 
-const meta: Meta<typeof Navbar> = {
-  title: "Components/Layout/Navbar",
-  component: Navbar,
+const meta: Meta<typeof Footer> = {
+  title: "Components/Layout/Footer",
+  component: Footer,
   tags: ["docsPage"],
   parameters: {
     layout: "fullscreen",
@@ -12,6 +12,6 @@ const meta: Meta<typeof Navbar> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Navbar>;
+type Story = StoryObj<typeof Footer>;
 
 export const Default: Story = {};
