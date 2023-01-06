@@ -32,7 +32,7 @@ const Home = () => {
       </Head>
       <Layout>
         <VStack display="stretch" spacing={{ base: 8, lg: 20 }}>
-          <HeroSection productNumber={data?.length ?? 0} />
+          <HeroSection productNumber={data?.meta.total ?? 0} />
           <FeatureSection />
           <PricingSection />
         </VStack>
