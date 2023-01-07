@@ -12,7 +12,7 @@ export const ProductFixture = createFixture<IProduct>({
   description:
     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, blanditiis cum debitis doloremque eos excepturi explicabo fuga fugiat hic illo natus nobis non, odio sequi similique ullam velit vitae voluptatibus?",
   rating: {
-    rate: 4.8,
+    rate: 3.8,
     count: 329,
   },
 });

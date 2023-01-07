@@ -31,7 +31,7 @@ const PageHeader = ({
       w="100%"
       spacing={3}
       justify="space-between"
-      align="center"
+      align={{ base: "start", lg: "center" }}
     >
       <VStack align="start" spacing={1}>
         <Heading size={size}>{title}</Heading>
