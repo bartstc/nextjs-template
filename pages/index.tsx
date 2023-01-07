@@ -30,7 +30,7 @@ const Home = () => {
           rel="stylesheet"
         />
       </Head>
-      <Layout>
+      <Layout maxW="1340px">
         <VStack display="stretch" spacing={{ base: 8, lg: 20 }}>
           <HeroSection productNumber={data?.meta.total ?? 0} />
           <FeatureSection />

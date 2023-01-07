@@ -17,7 +17,7 @@ export const Footer = () => {
   const color = useColorModeValue("gray.700", "gray.200");
   return (
     <Box bg={bg} color={color}>
-      <Container as={Stack} maxW="1400px" py={10}>
+      <Container as={Stack} maxW="1340px" py={10}>
         <SimpleGrid
           templateColumns={{ sm: "1fr 1fr", md: "2fr 1fr 1fr 1fr 1fr" }}
           spacing={8}

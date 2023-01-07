@@ -41,7 +41,7 @@ const Home = () => {
         <title>Products List</title>
       </Head>
       <Layout>
-        <VStack display="stretch" maxW="1000px" m="0 auto" spacing={10}>
+        <VStack display="stretch" spacing={10}>
           <PageHeader
             title={formatMessage({
               id: "products-list-title",
