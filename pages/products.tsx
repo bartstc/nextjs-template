@@ -33,7 +33,7 @@ const Home = () => {
     return <h1>Loading ...</h1>;
   }
 
-  const noMoreProducts = data?.meta.total <= params.limit;
+  const noMoreProducts = data.meta.total <= params.limit;
 
   return (
     <>

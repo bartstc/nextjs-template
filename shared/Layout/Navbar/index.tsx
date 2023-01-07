@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import {
   Box,
@@ -45,6 +47,8 @@ export const Navbar = () => {
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
           <Text
+            as={Link}
+            href="/"
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
             fontWeight="extrabold"
           >

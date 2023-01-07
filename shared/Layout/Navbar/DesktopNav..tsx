@@ -1,9 +1,12 @@
+import Link from "next/link";
+import { useRouter } from "next/router";
+
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import {
   Box,
   Flex,
   Icon,
-  Link,
+  Link as ChLink,
   Popover,
   PopoverContent,
   PopoverTrigger,
@@ -17,6 +20,8 @@ import { INavItem } from "./INavItem";
 import { NAV_ITEMS } from "./navItems";
 
 export const DesktopNav = () => {
+  const { pathname } = useRouter();
+
   const linkColor = useColorModeValue("gray.600", "gray.200");
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
   const brandColor = useBrandColor();
@@ -25,18 +30,19 @@ export const DesktopNav = () => {
     <Stack direction="row" spacing={4}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
-          <Popover trigger={"hover"} placement={"bottom-start"}>
+          <Popover trigger="hover" placement="bottom-start">
             <PopoverTrigger>
-              <Link
+              <ChLink
+                as={navItem.href ? Link : undefined}
                 p={2}
                 href={navItem.href}
-                color={linkColor}
+                color={pathname === navItem.href ? brandColor : linkColor}
                 _hover={{
                   color: brandColor,
                 }}
               >
                 {navItem.label}
-              </Link>
+              </ChLink>
             </PopoverTrigger>
             {navItem.children && (
               <PopoverContent
@@ -65,7 +71,7 @@ const DesktopSubNav = ({ label, href, subLabel }: INavItem) => {
   const brandColor = useBrandColor();
 
   return (
-    <Link
+    <ChLink
       href={href}
       target="_blank"
       rel="noreferrer noopener"
@@ -98,6 +104,6 @@ const DesktopSubNav = ({ label, href, subLabel }: INavItem) => {
           <Icon color={brandColor} w={5} h={5} as={ChevronRightIcon} />
         </Flex>
       </Stack>
-    </Link>
+    </ChLink>
   );
 };

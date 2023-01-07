@@ -33,10 +33,10 @@ export const NAV_ITEMS: Array<INavItem> = [
   },
   {
     label: "Our Products",
-    href: "#",
+    href: "/products",
   },
   {
     label: "Carts List",
-    href: "#",
+    href: "/carts",
   },
 ];
