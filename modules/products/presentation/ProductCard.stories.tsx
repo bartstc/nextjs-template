@@ -19,6 +19,7 @@ type Story = StoryObj<typeof ProductCard>;
 
 export const Default: Story = {
   args: {
+    id: product.id,
     title: product.title,
     category: product.category,
     price: product.price,

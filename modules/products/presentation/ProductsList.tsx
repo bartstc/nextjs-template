@@ -13,6 +13,7 @@ const ProductsList = ({ products }: IProps) => {
       {products.map((product) => (
         <GridItem key={product.id} colSpan={1}>
           <ProductCard
+            id={product.id}
             title={product.title}
             category={product.category}
             price={product.price}

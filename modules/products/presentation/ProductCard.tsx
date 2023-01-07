@@ -1,20 +1,25 @@
 import { useIntl } from "react-intl";
 
-import { Box, Image, Text, VStack, HStack, Button } from "@chakra-ui/react";
+import { useRouter } from "next/router";
+
+import { Box, Text, VStack, HStack, Button } from "@chakra-ui/react";
 import { useSecondaryTextColor } from "theme";
 
-import { useNotImplementedYetToast } from "../../../shared/Toast";
+import { useNotImplementedYetToast } from "shared/Toast";
+
 import { Category } from "../types";
 import { useCategoryLabel } from "./useCategoryLabel";
 
 interface IProps {
+  id: number;
   title: string;
   category: Category;
   price: number;
   imageUrl: string;
 }
 
-const ProductCard = ({ title, category, price, imageUrl }: IProps) => {
+const ProductCard = ({ title, category, price, imageUrl, id }: IProps) => {
+  const { push } = useRouter();
   const { formatMessage } = useIntl();
   const categoryLabel = useCategoryLabel(category);
   const categoryColor = useSecondaryTextColor();
@@ -23,6 +28,8 @@ const ProductCard = ({ title, category, price, imageUrl }: IProps) => {
   return (
     <VStack spacing={3} overflow="hidden" rounded="lg">
       <Box
+        onClick={() => push(`/products/${id}`)}
+        cursor="pointer"
         h={64}
         w="lg"
         bgSize="cover"
@@ -39,7 +46,13 @@ const ProductCard = ({ title, category, price, imageUrl }: IProps) => {
           fontWeight="semibold"
           spacing={6}
         >
-          <Text isTruncated>{title}</Text>
+          <Text
+            isTruncated
+            onClick={() => push(`/products/${id}`)}
+            cursor="pointer"
+          >
+            {title}
+          </Text>
           <Text>${price}</Text>
         </HStack>
         <Text
