@@ -3,3 +3,8 @@ export {
   getProductsQuery,
   useProductsQuery,
 } from "./useProductsQuery";
+export {
+  getProductQueryKey,
+  getProductQuery,
+  useProductQuery,
+} from "./useProductQuery";
