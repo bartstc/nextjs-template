@@ -25,7 +25,9 @@ The template provides flexibility and the ability to customize depending on your
 
 ## How to use
 
-Clone this repo depending on the selected version.
+_You may simply download a ZIP Directory and start with a clean git repository using a command_ `git init`...
+
+... or clone this repo through git CLI depending on the selected version.
 
 ```
 git clone -b basic --depth 1 --single-branch https://github.com/bartstc/nextjs-template.git [project_name]
