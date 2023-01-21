@@ -41,6 +41,7 @@ const CartItem = ({
       overflow="hidden"
       justify="space-between"
       rounded="lg"
+      w="100%"
     >
       <Stack
         direction={{ base: "column", md: "row" }}

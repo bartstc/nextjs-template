@@ -10,10 +10,11 @@ import { Layout, PageHeader } from "shared/Layout";
 import { useNotImplementedYetToast } from "shared/Toast";
 
 import {
-  getCartQuery,
-  getCartQueryKey,
-  useCartQuery,
+  getCartProductsQuery,
+  getCartProductsQueryKey,
+  useCartProductsQuery,
 } from "modules/carts/infrastructure";
+import { CartsList } from "modules/carts/presentation";
 
 interface IProps {
   cartId: number;
@@ -23,13 +24,11 @@ const Cart = ({ cartId }: IProps) => {
   const { formatMessage } = useIntl();
   const notImplemented = useNotImplementedYetToast();
   // todo: handle error
-  const { data, isLoading } = useCartQuery(cartId);
+  const { data, isLoading } = useCartProductsQuery(cartId);
 
   if (isLoading || !data) {
     return <h1>Loading ...</h1>;
   }
-
-  console.log(data);
 
   return (
     <>
@@ -55,6 +54,16 @@ const Cart = ({ cartId }: IProps) => {
               })}
             </Button>
           </PageHeader>
+          <CartsList
+            cartProducts={data.map((product) => ({
+              id: product.id,
+              title: product.title,
+              price: product.price,
+              imageUrl: product.image,
+              category: product.category,
+              quantity: product.quantity,
+            }))}
+          />
         </VStack>
       </Layout>
     </>
@@ -68,8 +77,8 @@ export async function getServerSideProps() {
   const userCartId = 1;
 
   await queryClient.prefetchQuery({
-    queryKey: getCartQueryKey(userCartId),
-    queryFn: () => getCartQuery(userCartId),
+    queryKey: getCartProductsQueryKey(userCartId),
+    queryFn: () => getCartProductsQuery(userCartId),
   });
 
   return {

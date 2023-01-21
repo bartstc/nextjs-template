@@ -29,7 +29,7 @@ type Story = StoryObj<typeof CartsList>;
 
 export const Default: Story = {
   args: {
-    carts: products.map((product) => ({
+    cartProducts: products.map((product) => ({
       ...product,
       quantity: product.id,
       imageUrl: product.image,

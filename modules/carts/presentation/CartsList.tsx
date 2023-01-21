@@ -1,10 +1,17 @@
-import { ComponentProps } from "react";
+import { ComponentProps, Fragment } from "react";
 import { useIntl } from "react-intl";
 
 import { useRouter } from "next/router";
 
 import { ArrowForwardIcon } from "@chakra-ui/icons";
-import { VStack, HStack, Button, Text } from "@chakra-ui/react";
+import {
+  VStack,
+  HStack,
+  Button,
+  Text,
+  Divider,
+  Center,
+} from "@chakra-ui/react";
 import { useSecondaryTextColor } from "theme";
 
 import { useNotImplementedYetToast } from "shared/Toast";
@@ -12,22 +19,27 @@ import { useNotImplementedYetToast } from "shared/Toast";
 import { CartItem } from "./CartItem";
 
 interface IProps {
-  carts: ComponentProps<typeof CartItem>[];
+  cartProducts: ComponentProps<typeof CartItem>[];
 }
 
-const CartsList = ({ carts }: IProps) => {
+const CartsList = ({ cartProducts }: IProps) => {
   const { formatMessage } = useIntl();
   const { push } = useRouter();
   const notImplemented = useNotImplementedYetToast();
 
   const secondaryColor = useSecondaryTextColor();
 
-  const subtotal = carts.map((cart) => cart.price).reduce((a, b) => a + b, 0);
+  const subtotal = cartProducts
+    .map((cart) => cart.price)
+    .reduce((a, b) => a + b, 0);
 
   return (
-    <VStack w="100%" spacing={10}>
-      {carts.map((cart) => (
-        <CartItem key={cart.id} {...cart} />
+    <VStack w="100%" spacing={8}>
+      {cartProducts.map((cart) => (
+        <Fragment key={cart.id}>
+          <CartItem {...cart} />
+          <Divider />
+        </Fragment>
       ))}
       <VStack w="100%" align="start" spacing={1}>
         <HStack
