@@ -12,7 +12,7 @@ The template provides flexibility and the ability to customize depending on your
 - TypeScript support.
 - Static code analysis: eslint, prettier, husky.
 - Testing environment based on [Vitest](https://vitest.dev/) and [Storybook](https://storybook.js.org/).
-- Devcontainer config for VS Code.
+- [Devcontainer](https://code.visualstudio.com/docs/devcontainers/containers) config for VS Code.
 
 ## Extended version - `core`
 
