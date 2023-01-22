@@ -11,7 +11,8 @@ The template provides flexibility and the ability to customize depending on your
 - Next.js.
 - TypeScript support.
 - Static code analysis: eslint, prettier, husky.
-- Testing environment based on [Vitest](https://vitest.dev/) and [Storybook](https://storybook.js.org/)
+- Testing environment based on [Vitest](https://vitest.dev/) and [Storybook](https://storybook.js.org/).
+- Devcontainer config for VS Code.
 
 ## Extended version - `core`
 
