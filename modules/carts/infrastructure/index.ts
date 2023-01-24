@@ -4,3 +4,4 @@ export {
   useCartProductsQuery,
   getCartProductsQuery,
 } from "./useCartProductsQuery";
+export { useClearCart } from "./useClearCart";

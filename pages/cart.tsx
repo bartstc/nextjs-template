@@ -2,19 +2,17 @@ import { useIntl } from "react-intl";
 
 import Head from "next/head";
 
-import { DeleteIcon } from "@chakra-ui/icons";
-import { Button, VStack } from "@chakra-ui/react";
+import { VStack } from "@chakra-ui/react";
 import { dehydrate, QueryClient } from "@tanstack/react-query";
 
 import { Layout, PageHeader } from "shared/Layout";
-import { useNotImplementedYetToast } from "shared/Toast";
 
 import {
   getCartProductsQuery,
   getCartProductsQueryKey,
   useCartProductsQuery,
 } from "modules/carts/infrastructure";
-import { CartsList } from "modules/carts/presentation";
+import { CartsList, ClearCartButton } from "modules/carts/presentation";
 
 interface IProps {
   cartId: number;
@@ -22,7 +20,6 @@ interface IProps {
 
 const Cart = ({ cartId }: IProps) => {
   const { formatMessage } = useIntl();
-  const notImplemented = useNotImplementedYetToast();
   // todo: handle error
   const { data, isLoading } = useCartProductsQuery(cartId);
 
@@ -47,12 +44,7 @@ const Cart = ({ cartId }: IProps) => {
               defaultMessage: "These are all products that you yet chose.",
             })}
           >
-            <Button leftIcon={<DeleteIcon />} onClick={notImplemented}>
-              {formatMessage({
-                id: "cart-clear-all",
-                defaultMessage: "Clear cart",
-              })}
-            </Button>
+            <ClearCartButton cartId={cartId} />
           </PageHeader>
           <CartsList
             cartProducts={data.map((product) => ({
