@@ -20,7 +20,7 @@ The template provides flexibility and the ability to customize depending on your
 - Internalization based on [React Intl](https://formatjs.io/docs/getting-started/installation/).
 - Data fetching and external state synchronization based on [React Query](https://tanstack.com/query/v4/).
 - Access to simple, modular and accessible component based on [Chakra UI](https://chakra-ui.com/).
-- Demo app (todo).
+- A demo app that presents various rendering strategies available in the NextJS ecosystem.
 
 # Guideline
 
